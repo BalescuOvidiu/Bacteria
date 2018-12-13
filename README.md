@@ -1,15 +1,18 @@
 # Bacteria
-An Arduino 8x8 matrix game for Introduction to robotics. 
+<p>An Arduino 8x8 matrix game for Introduction to robotics.</p> 
 
 <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/photo.jpg"/>
 
-
 <h3>Gameplay</h3>
+<p>
+</p>
+<p>
+</p>
 
 <h3>Electric</h3>
 <table border="0">
-  <tr>
-    <td valign="top" width="30%">
+  <tr border="0">
+    <td border="0" valign="top" width="30%">
       <ol>
         <li>Arduino Uno Board</li>
         <li>Small breadboard</li>
@@ -24,8 +27,8 @@ An Arduino 8x8 matrix game for Introduction to robotics.
         <li>LCD display</li>
         <li>Joystick</li>
       </ol>
-    </td valign="middle" width="69.5%">
-    <td>
+    </td border="0" valign="middle" width="69.5%">
+    <td border="0">
       <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/schematic.png"/>
     </td>
   </tr>
