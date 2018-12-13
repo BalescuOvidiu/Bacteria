@@ -1,12 +1,12 @@
 # Bacteria
 
-<table border="0" style="border-spacing:0; border-color:#FFF;">
-  <tr border="0" style="border-spacing:0; border-color:#FFF;">
-    <td border="0" style="border-spacing:0; border-color:#FFF;" valign="top" width="69.5%">
+<table border="0" bordercolor="#FFFFFF">
+  <tr border="0" bordercolor="#FFFFFF">
+    <td border="0" bordercolor="#FFFFFF" valign="top" width="70%">
       <p>An Arduino 8x8 matrix game for Introduction to robotics.</p>
       <p>The game is run on a 20x20 square matrix. On some squares there are bacteria. A bacteria is bordered by up to 8 bacteria: up-left, left, left-bottom, bottom, bottom-right, up-right and up squares. If there are two bacteria around a square, a bacteria will appear in the next generation. If more than 4 bacteria are found around a bacterium, then it will die.</p>
     </td>
-    <td border="0" style="border-spacing:0; border-color:#FFF;">
+    <td border="0" bordercolor="#FFFFFF">
       <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/photo.jpg"/>
     </td>
   </tr>
@@ -14,14 +14,15 @@
 
 <h3>Gameplay</h3>
 <p>
+  
 </p>
 <p>
 </p>
 
 <h3>Electric</h3>
-<table border="0">
-  <tr border="0">
-    <td border="0" valign="top" width="30%">
+<table border="0" bordercolor="#FFFFFF">
+  <tr border="0" bordercolor="#FFFFFF">
+    <td border="0" bordercolor="#FFFFFF" valign="top" width="30%">
       <ol>
         <li>Arduino Uno Board</li>
         <li>Small breadboard</li>
@@ -36,9 +37,20 @@
         <li>LCD display</li>
         <li>Joystick</li>
       </ol>
-    </td border="0" valign="middle" width="69.5%">
+    </td border="0" valign="middle">
     <td border="0">
       <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/schematic.png"/>
     </td>
   </tr>
 </table>
+
+
+
+
+
+
+
+
+
+
+
