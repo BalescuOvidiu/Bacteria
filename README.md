@@ -7,7 +7,7 @@
         An Arduino 8x8 matrix game for Introduction to robotics, a turn-based role-play game.
       </p>
       <p>
-        The game is runs on a 20x20 square matrix. On some squares there are bacteria. A bacteria is bordered by up to 8. If there are two bacteria around a square, a bacteria will appear in the next generation. If more than 4 bacteria are found around a bacterium, then it will die.
+        The game is runs on a 20x20 square matrix. On some squares there are bacteria. A bacteria is bordered by up to 8. If there are two bacteria around a square, a bacteria will appear in the next generation. If more than 4 bacteria are found around a bacteria, then it will die.
       </p>
     </td>
     <td border="0" bordercolor="#FFFFFF">
@@ -48,14 +48,3 @@
     </td>
   </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
