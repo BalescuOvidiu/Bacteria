@@ -18,7 +18,7 @@
     <td colspan="2">
       <h3>Gameplay</h3>
       <p>
-        In the menu, a DNA section is displayed on the LED matrix. When the player moves or presses the joystick, then the game starts.The player is a bactera and can move on the matrix using the joystick.
+        In the menu, a DNA section is displayed on the LED matrix. When the player moves or press the joystick, or press button, then the game starts. The player is a bactera and can move on the matrix using the joystick.
       </p>
       <p>
         If joystick is pressed or moved and player is not bordered by more 4 bacteria, then the game will go to next generation(<b>level</b>). If player is bordered by more 4 bacteria, then game will go to restart room. In restart room, on matrix is a X and on LCD is listed the <b>score</b>, max number of generation survived by player.  
@@ -29,18 +29,19 @@
   <tr border="0" bordercolor="#FFFFFF">
     <td border="0" bordercolor="#FFFFFF" valign="top" width="30%">
       <ol>
-        <li>Arduino Uno Board</li>
-        <li>Small breadboard</li>
-        <li>Medium breadboard</li>
-        <li>Potentiometer</li>
-        <li>10 microfarad capacitor</li>
-        <li>104 microfarad capacitor</li>
+        <li>Arduino UNO R3 board</li>
+        <li>Mini Breadboard</li>
+        <li>Breadboard HQ 400 points</li>
+        <li>10k ohm potentiometer</li>
+        <li>10 microfarads capacitor</li>
+        <li>104 picofarads capacitor</li>
         <li>10k ohm resistor</li>
         <li>220 ohm resistor</li>
         <li>Max7219 driver</li>
         <li>LED matrix 8x8 1088AS</li>
-        <li>LCD display</li>
+        <li>LCD 1602 Module</li>
         <li>Joystick</li>
+        <li>Button</li>
       </ol>
     </td border="0" valign="middle">
     <td border="0">
