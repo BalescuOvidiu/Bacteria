@@ -9,7 +9,7 @@ An Arduino 8x8 matrix game for Introduction to robotics.
 <h3>Electric</h3>
 <table border="0">
   <tr>
-    <td style="width:30%;">
+    <td valign="top" width="30%">
       <ol>
         <li>Arduino Uno Board</li>
         <li>Small breadboard</li>
@@ -24,7 +24,7 @@ An Arduino 8x8 matrix game for Introduction to robotics.
         <li>LCD display</li>
         <li>Joystick</li>
       </ol>
-    </td style="width:69.5%;">
+    </td valign="middle" width="69.5%">
     <td>
       <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/schematic.png"/>
     </td>
