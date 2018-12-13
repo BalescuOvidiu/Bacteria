@@ -7,25 +7,25 @@
         An Arduino 8x8 matrix game for Introduction to robotics, a turn-based role-play game.
       </p>
       <p>
-        The game is runs on a 20x20 square matrix. On some squares there are bacteria. A bacteria is bordered by up to 8. If there are two bacteria around a square, a bacteria will appear in the next generation. If more than 4 bacteria are found around a bacteria, then it will die.
+        The game is runs on a 20x20 square matrix. On some squares there are bacteria. A bacterium is bordered by up to 8. If there are two bacteria around a square, a bacterium will appear in the next generation. If more than 4 bacteria are found around a bacterium, then it will die.
       </p>
     </td>
     <td border="0" bordercolor="#FFFFFF">
       <img src="https://raw.githubusercontent.com/BalescuOvidiu/Bacteria/master/img/photo.jpg"/>
     </td>
   </tr>
-</table>
-
-<h3>Gameplay</h3>
-<p>
-  The player is a bacterium and can move on the matrix using the joystick. If joystick is pressed or moved and player is not bordered by more 4 bacteria, then the game will go to next generation(<b>level</b>).
-</p>
-<p>
-  If player is bordered by more 4 bacteria, then game will go to restart room. In restart room, on matrix is a X and on LCD is listed the <b>score</b>, max number of generation survived by player.  
-</p>
-
-<h3>Electronic</h3>
-<table border="0" bordercolor="#FFFFFF">
+  <tr>
+    <td colspan="2">
+      <h3>Gameplay</h3>
+      <p>
+        In the menu, a DNA section is displayed on the LED matrix. When the player moves or presses the joystick, then the game starts.The player is a bactera and can move on the matrix using the joystick.
+      </p>
+      <p>
+        If joystick is pressed or moved and player is not bordered by more 4 bacteria, then the game will go to next generation(<b>level</b>). If player is bordered by more 4 bacteria, then game will go to restart room. In restart room, on matrix is a X and on LCD is listed the <b>score</b>, max number of generation survived by player.  
+      </p>
+    </td>
+  <h3>Electronic</h3>
+  </tr>
   <tr border="0" bordercolor="#FFFFFF">
     <td border="0" bordercolor="#FFFFFF" valign="top" width="30%">
       <ol>
