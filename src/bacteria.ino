@@ -74,7 +74,6 @@ void lose() {
   scene = 2;
   equilibrum = 0;
   generation = 0;
-  resetLcd();
 }
 void quit() {
   if (score < generation) {
@@ -83,7 +82,6 @@ void quit() {
   scene = 0;
   equilibrum = 0;
   generation = 0;
-  resetLcd();
 }
 byte count(unsigned long x, unsigned long y) {
   byte sum = 0;
@@ -279,7 +277,6 @@ void initialize() {
   timeJoystick = millis();
   timePlayer = millis();
   playerLed = 1;
-  resetLcd();
 }
 
 void setup() {
@@ -301,6 +298,7 @@ void loop() {
   if (millis() > DELTA_LCD + timeLcd) {
     Serial.println(generation);
     lcd.noDisplay();
+    resetLcd();
     if (scene == 1) {
       // LCD
       lcd.setCursor(0, 0);
