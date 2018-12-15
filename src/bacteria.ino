@@ -24,14 +24,6 @@ unsigned long timePlayer = 0;
 // LCD
 LiquidCrystal lcd(13, 12, 8, 9, 10, 11);
 
-
-void resetLcd() {
-  lcd.setCursor(0, 0);
-  lcd.print("                ");
-  lcd.setCursor(0, 1);
-  lcd.print("                ");
-}
-
 // Menu
 byte line = 0;
 byte menu[] = {
@@ -183,8 +175,8 @@ void setView(long x, long y) {
 }
 
 // Player
-unsigned long playerX = 0;
-unsigned long playerY = 0;
+unsigned long playerX;
+unsigned long playerY;
 bool playerLed = 0;
 
 void nextGeneration() {
@@ -214,10 +206,6 @@ void nextGeneration() {
         born(j, i);
         change = 1;
       }
-    }
-  }
-  for (unsigned long i = 0; i < MAP_SIZE; i++) {
-    for (unsigned long j = 0; j < MAP_SIZE; j++) {
       if (boolMap[i][j] > 0) {
         boolMap[i][j] = 1;
       }
@@ -230,7 +218,7 @@ void nextGeneration() {
       for (unsigned long j = 0; j < MAP_SIZE; j++) {
         // Death bacteria
         if (boolMap[i][j] && (j != playerX || i != playerY)) {
-          if ((i + j) % 3 == equilibrum % 3 || (equilibrum * i) % j == 0) {
+          if ((i + j) % 3 == 0) {
             boolMap[i][j] = false;
           }
         }
@@ -254,6 +242,8 @@ void movePlayer(unsigned long x, unsigned long y) {
 }
 void initialize() {
   scene = 1;
+  playerX = 0;
+  playerY = 0;
   // Map
   for (unsigned long i = 0; i < MAP_SIZE; i++) {
     for (unsigned long j = 0; j < MAP_SIZE; j++) {
@@ -298,33 +288,35 @@ void loop() {
   if (millis() > DELTA_LCD + timeLcd) {
     Serial.println(generation);
     lcd.noDisplay();
-    resetLcd();
+    lcd.setCursor(0,0);
     if (scene == 1) {
       // LCD
-      lcd.setCursor(0, 0);
       lcd.print("Generation: ");
       lcd.print(generation);
+      lcd.print("   ");
       lcd.setCursor(0, 1);
       lcd.print("x: ");
       lcd.print(playerX + 1);
       lcd.print("   y: ");
       lcd.print(playerY + 1);
+      lcd.print("    s");
     }
     else if (scene == 2) {
       lcd.print("Move joystick to");
       lcd.setCursor(0, 1);
-      lcd.print("play!  Score:");
+      lcd.print("PLAY!  Score:");
       lcd.print(score);
+      lcd.print("   ");
     }
     else {
-      lcd.setCursor(0, 0);
       lcd.print("Move joystick to");
       lcd.setCursor(0, 1);
-      lcd.print("play!");
+      lcd.print("PLAY!");
       if (score > 0) {
-        lcd.print(" Score:");
+        lcd.print(" Score: ");
         lcd.print(score);
       }
+      lcd.print("   ");
     }
     lcd.display();
     timeLcd = millis();
@@ -351,8 +343,7 @@ void loop() {
         movePlayer(0, -1);
       }
       else if (s < 100) {
-        timeJoystick = millis();
-        nextGeneration();
+        movePlayer(0,0);
       }
     }
     if (millis() > DELTA_BUTTON + timeButton) {
