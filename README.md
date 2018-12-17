@@ -18,7 +18,7 @@
     <td colspan="2">
       <h3>Gameplay</h3>
       <p>
-        In the menu, a DNA section is displayed on the LED matrix. When the player moves or press the joystick, or press button, then the game starts. The player is a bactera and can move on the matrix using the joystick.
+        In the menu, a DNA section is displayed on the LED matrix. When the player moves or press the joystick, or press button, then the game starts. The player is a bacterium and can move on the matrix using the joystick.
       </p>
       <p>
         If joystick is pressed or moved and player is not bordered by more 4 bacteria, then the game will go to next generation(<b>level</b>). If player is bordered by more 4 bacteria, then game will go to restart room. In restart room, on matrix is a X and on LCD is listed the <b>score</b>, max number of generation survived by player. 
