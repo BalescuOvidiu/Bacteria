@@ -19,7 +19,9 @@ unsigned long timePlayer = 0;
 #define JOYSTICK_X A0
 #define JOYSTICK_Y A1
 #define JOYSTICK_S A2
-#define RESTART     4
+#define JOY_LOW    400
+#define JOY_HIGH   600
+#define RESTART    4
 
 // LCD
 LiquidCrystal lcd(13, 12, 8, 9, 10, 11);
@@ -75,7 +77,7 @@ void quit() {
   equilibrum = 0;
   generation = 0;
 }
-byte count(unsigned long x, unsigned long y) {
+byte countBacteria(unsigned long x, unsigned long y) {
   byte sum = 0;
   if (0 < x) {
     sum += (bool)boolMap[y][x - 1];
@@ -104,7 +106,7 @@ byte count(unsigned long x, unsigned long y) {
   return sum;
 }
 bool canBorn(unsigned long x, unsigned long y) {
-  return ((count(x, y) < MAX_BACTERIA) && !boolMap[y][x]);
+  return ((countBacteria(x, y) < MAX_BACTERIA) && !boolMap[y][x]);
 }
 void born(unsigned long x, unsigned long y) {
   if (0 < x) {
@@ -184,7 +186,7 @@ void nextGeneration() {
   for (unsigned long i = 0; i < MAP_SIZE; i++) {
     for (unsigned long j = 0; j < MAP_SIZE; j++) {
       if (boolMap[i][j]) {
-        boolMap[i][j] = count(j, i);
+        boolMap[i][j] = countBacteria(j, i);
       }
     }
   }
@@ -322,27 +324,26 @@ void loop() {
     timeLcd = millis();
   }
   // Joystick
-  unsigned x, y, s;
-  x = analogRead(JOYSTICK_X);
-  y = analogRead(JOYSTICK_Y);
-  s = analogRead(JOYSTICK_S);
+  unsigned xJoystick = analogRead(JOYSTICK_X);
+  unsigned yJoystick = analogRead(JOYSTICK_Y);
+  unsigned sJoystick = analogRead(JOYSTICK_S);
   // Game
   if (scene == 1) {
     // Update game
     if (millis() > DELTA_JOYSTICK + timeJoystick) {
-      if (x < 400) {
+      if (xJoystick < JOY_LOW) {
         movePlayer(1, 0);
       }
-      else if (x > 600) {
+      else if (xJoystick > JOY_HIGH) {
         movePlayer(-1, 0);
       }
-      else if (y < 400) {
+      else if (yJoystick < JOY_LOW) {
         movePlayer(0, 1);
       }
-      else if (y > 600) {
+      else if (yJoystick > JOY_HIGH) {
         movePlayer(0, -1);
       }
-      else if (s < 100) {
+      else if (sJoystick < 100) {
         movePlayer(0,0);
       }
     }
@@ -372,7 +373,7 @@ void loop() {
   else if (scene == 2) {
     // Update restart
     if (millis() > DELTA_JOYSTICK + timeJoystick) {
-      if (x < 400 || y < 400 || 600 < x || 600 < y || s < 100) {
+      if (xJoystick < JOY_LOW || yJoystick < JOY_LOW || JOY_HIGH < xJoystick || JOY_HIGH < yJoystick || sJoystick < 100) {
         initialize();
       }
     }
@@ -392,7 +393,7 @@ void loop() {
   else {
     // Update menu
     if (millis() > DELTA_JOYSTICK + timeJoystick) {
-      if (x < 400 || y < 400 || 600 < x || 600 < y || s < 100) {
+      if (xJoystick < JOY_LOW || yJoystick < JOY_LOW || JOY_HIGH < xJoystick || JOY_HIGH < yJoystick || sJoystick < 100) {
         initialize();
       }
     }
