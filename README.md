@@ -25,10 +25,10 @@
         <a href="https://drive.google.com/open?id=1Pe8iDwB8iUbNWSNGQlBPPpknMyZsimqw">Link</a> to the video.
       </p>
     </td>
-  <h3>Electronic</h3>
   </tr>
   <tr border="0" bordercolor="#FFFFFF">
     <td border="0" bordercolor="#FFFFFF" valign="top" width="30%">
+      <h3>Electronic</h3>
       <ol>
         <li>Arduino UNO R3 board</li>
         <li>Mini Breadboard</li>
